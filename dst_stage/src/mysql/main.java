@@ -5,8 +5,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class main {
-	{
-		
+	
+		public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
             public void run() {
              
