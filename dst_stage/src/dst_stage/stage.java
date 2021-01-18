@@ -22,8 +22,9 @@ public class stage
 		}
 	*/	
 		int number = getRandom(tab1);
-		
-		System.out.println(number); 
+		int res = number; 
+		System.out.println(number);
+		System.out.println(res);
 
 	}
 	
