@@ -1,0 +1,20 @@
+TABLE(id_colonne, id_table )
+clé primaire : id_table, id_colonne
+clé étrangère : id_colonne en référence à id_colonne de COLONNE
+
+COLONNE(id_colonne, nb_table)
+clé primaire : id_colonne
+
+CLASSE(id_classe, nomClasse)
+clé primaire: id_classe
+
+ELEVE(id_classe, id_eleve, nomEleve, prenomEleve, Id_colonne, Id_table)
+clé primaire : id_classe, id_eleve
+clé étrangère : id_classe en référence à id-classe de CLASSE
+		id_colonne
+		id_table
+
+
+ESTAFFECTEE(Id_classe, Id_colonne)
+clé primaire : Id_classe, Id_colonne
+
