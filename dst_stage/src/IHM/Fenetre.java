@@ -63,7 +63,7 @@ public class Fenetre
 	  bouton6.setBounds(400, 250, 100, 50);
 	  
 	  
-	  
+	  new MyFrame();
 	  
 	  
 	 }

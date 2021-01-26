@@ -20,11 +20,15 @@ public class algo {
 		   Statement s2 = c.createStatement();
 		   ResultSet rs2 = s2.executeQuery(req2);
 		   
+/*		   String req3 = "update eleve set id_colonne = '1', id_table = '1' where id_eleve = '1'";
+		   Statement s3 = c.createStatement();
+		   ResultSet rs3 = s3.executeUpdate(req3); */
 		   
 		   while (rs2.next())
 		   {
-		    System.out.println(rs2.getInt(1) + " : " + rs2.getInt(2) + " : " + rs2.getString(3));
-		   
+		    //System.out.println(rs2.getInt(1) + " : " + rs2.getInt(2) + " : " + rs2.getString(3));
+		    String nom = rs2.getString(5);
+		    System.out.println(nom);
 		   }
 		   
 		  }
