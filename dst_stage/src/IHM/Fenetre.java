@@ -21,7 +21,6 @@ public class Fenetre
 	  panel.setBackground(Color.white);
 	  f.setBackground(Color.gray);
 	  panel.setLayout(new FlowLayout());
-	 // f.setSize(200, 200);
 	  f.pack();
 	  JLabel label = new JLabel("Attributions des places en salle de DST");
 	  panel.add(label);
@@ -68,4 +67,8 @@ public class Fenetre
 	  
 	  
 	 }
+	
+	
+	
+	
 }
