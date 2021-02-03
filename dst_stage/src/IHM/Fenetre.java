@@ -4,6 +4,12 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import javax.swing.*;
 
@@ -36,6 +42,34 @@ public class Fenetre
 	  
 	 
 	  JButton bouton1 = new JButton("MCO1");
+	  
+	  bouton1.addActionListener(new ActionListener(){
+		  public void actionPerformed(ActionEvent arg0) {
+			  try {
+				  Connection c = null;
+				  Class.forName("com.mysql.cj.jdbc.Driver");
+				   String url = "jdbc:mysql://localhost/dst", user = "root", password = "";
+				
+
+				   c = DriverManager.getConnection(url, user, password);
+				   
+				   String req4 = "select prenom_eleve, nom_eleve from eleve where id_classe = '1' order by rand()";
+				   Statement s4 = c.createStatement();
+				   ResultSet rs4 = s4.executeQuery(req4);
+			  
+				   while (rs4.next())
+				   {
+					   String prenom = rs4.getString(1);
+					   System.out.println(prenom);
+					   String nombre = rs4.getString(2);
+					   System.out.println(nombre);
+					   
+				   }
+			  }
+			  catch(Exception e) {System.out.println(e);
+		  }
+		  }});
+	  
 	  JButton bouton2 = new JButton("MCO2");
 	  JButton bouton3 = new JButton("NDRC1");
 	  JButton bouton4 = new JButton("NDRC2");
