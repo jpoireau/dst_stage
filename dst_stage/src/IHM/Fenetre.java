@@ -71,6 +71,33 @@ public class Fenetre
 		  }});
 	  
 	  JButton bouton2 = new JButton("MCO2");
+	  
+	  bouton2.addActionListener(new ActionListener(){
+		  public void actionPerformed(ActionEvent arg0) {
+			  try {
+				  Connection c = null;
+				  Class.forName("com.mysql.cj.jdbc.Driver");
+				   String url = "jdbc:mysql://localhost/dst", user = "root", password = "";
+				
+
+				   c = DriverManager.getConnection(url, user, password);
+				   
+				   String req5 = "select prenom_eleve, nom_eleve from eleve where id_classe = '2' order by rand()";
+				   Statement s5 = c.createStatement();
+				   ResultSet rs5 = s5.executeQuery(req5);
+			  
+				   while (rs5.next())
+				   {
+					   String prenom = rs5.getString(1);
+					   System.out.println(prenom);
+					   String nombre = rs5.getString(2);
+					   System.out.println(nombre);
+					   
+				   }
+			  }
+			  catch(Exception e) {System.out.println(e);
+		  }
+		  }});
 	  JButton bouton3 = new JButton("NDRC1");
 	  JButton bouton4 = new JButton("NDRC2");
 	  JButton bouton5 = new JButton("SIO1");
